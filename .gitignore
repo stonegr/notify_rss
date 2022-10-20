@@ -1,4 +1,6 @@
 # file
+config.json
 
 # dir
 __pycache__
+static
