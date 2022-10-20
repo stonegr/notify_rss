@@ -4,7 +4,7 @@
 ![GitHub Forks](https://img.shields.io/github/forks/stonegr/notify_rss.svg?style=flat-square&label=Forks&logo=github)
 
 ## Project structure
-
+![Project_structure](https://github.com/stonegr/notify_rss/blob/main/others/picture/Project_structure.png)
 
 ## Usage
 - python3
