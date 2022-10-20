@@ -1,0 +1,3 @@
+sqlacodegen "sqlite:///static/db/rss.db" --tables url_data --outfile "common/models/url_data.py"
+
+sqlacodegen "sqlite:///static/db/rss.db" --tables user_log --outfile "common/models/user_log.py"

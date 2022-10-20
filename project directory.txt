@@ -1,0 +1,77 @@
+.
+|   config.json  ## 配置文件
+|   cs.py        ## 测试文件
+|   db.txt       ## 数据库的生成命令
+|   run.py       ## 启动文件
+|   setup.py     ## parser启动文件
+|        
++---base
+|   |   aps.py ## 定时框架的类
+|   |   base.py ## 基础类
+|   |   do_sql.py ## sqlite的操作类
+|   |   logging_.py ## loggin的类
+|   |   parser.py ## 解析html,json,xml的类
+|   |   spider.py ## 请求类
+|   |   __init__.py
+|           
++---common
+|   |   config_do.py ## 配置文件的操作类
+|   |   spider_parse.py ## 请求类和解析类的封装
+|   |   util.py # 一些基础类
+|   |   
+|   \---models
+|       |   url_data.py ## 数据库的url_data模型
+|       |   user_log.py ## 数据库的url_log模型
+|               
++---controller ## 操作逻辑
+|       
++---static
+|   +---db
+|   |       rss.db ## 数据库文件
+|   |       
+|   +---log
+|   |       output.log ## log文件
+|   |       
+|   \---secreat
+|           access_token.txt ## 微信的密钥文件
+|           
+\---notify
+    |   base.py ## 通知的基类，采用抽象工厂模式
+    |   telegram_.py ## telegran的通知
+    |   wechat.py ## 微信的通知
+    |   __init__.py
+            
+
+
+"p3terx": {         ---必填
+    "type": "rss",          ---必填
+    "enable": true,     ---必填
+    "url": "https://p3terx.com/feed/",      ---必填
+    "kws": {     ---选填
+        "proxy": true,
+        "timeout": 10
+    },
+    "cron": "0/3 * * * *",     ---必填
+    "mainkey": "link",---选填(默认第一个)
+    "mainlist": 'path'  ---在html,和json的时候必填,代表item的父路径
+    "keys": [    ---选填
+        "title",
+        "link"
+    ]
+},
+
+# keys在html,json的填法
+"keys": {
+    "link": {
+        "path": "div > div > div.detail > h6 > a", # 必填
+        "index": 0, # 缺省值为0
+        "type": "text" # 缺省值为'text',也可以为attr的属性名称
+        "start": # 为获取到的值的前缀,一般用于href加上host
+    }
+}
+
+
+python3 setup.py -t 脑洞乌托邦 方的言 nn.ci -ti 2
+python3 setup.py -c "D:\git 项目\feeds_p\config.json" -t 脑洞乌托邦 方的言 nn.ci -ti 2
+
+python3 setup.py -c "D:\git 项目\feeds_p\config.json"  -f
