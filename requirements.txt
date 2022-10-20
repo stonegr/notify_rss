@@ -1,0 +1,8 @@
+aiohttp==3.8.1
+APScheduler==3.6.3
+beautifulsoup4==4.11.1
+feedparser==6.0.10
+python_telegram_bot==13.13
+requests==2.26.0
+SQLAlchemy==1.4.36
+telegram==0.0.1
