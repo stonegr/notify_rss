@@ -8,10 +8,6 @@ from .base import *
 from common.models.url_data import UrlDatum
 from common.models.user_log import UserLog
 
-# notify
-from notify.wechat import Wechat
-from notify.telegram_ import Telegram
-
 
 class Url_data_do(controller_metaclass):
     """
@@ -41,7 +37,7 @@ class Url_data_do(controller_metaclass):
                     m.today_contents,
                     m.date,
                 )  # 获取数据库中存的数据
-                # 判断第一次添加和
+                # 判断第一次添加
                 _change_data = compare_dict(
                     d, list_content(_current_contents), list_content(_current0_today)
                 )
