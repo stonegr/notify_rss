@@ -40,6 +40,27 @@
 - user的配置示例  
 ![截图_20221020190751](https://user-images.githubusercontent.com/74632994/196932874-1cf843d2-308a-4195-882c-870ee9c7357d.png)
 
+## 测试示例  
+
+- 对多个data中的item进行测试  
+
+`python3 setup.py -t 脑洞乌托邦 nn.ci`
+
+![截图_20221021112243](https://user-images.githubusercontent.com/74632994/197104264-5fdc3b9a-e1de-4a6e-aed8-6ca2b6aa0ccf.png)
+
+
+- 对多个data中的item进行测试，并设置显示的条数
+
+`python3 setup.py -t 脑洞乌托邦 nn.ci -ti 2`
+
+![截图_20221021112344](https://user-images.githubusercontent.com/74632994/197104400-3fbfe9a4-ec96-4049-b7fc-5fb9fb00daef.png)
+
+- 对多个data中的item进行测试，并设置显示全部条数
+
+`python3 setup.py -t 脑洞乌托邦 nn.ci -ti all`
+
+![截图_20221021112559](https://user-images.githubusercontent.com/74632994/197104670-0e98041a-2898-45e4-8db4-61ce4d2ad43f.png)
+
 
 
 ## 运行截图
