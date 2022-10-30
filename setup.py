@@ -44,7 +44,7 @@ args = parser.parse_args()
 
 # print(os.listdir("."))
 if "config.json" in os.listdir("."):
-    _f_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "config.json"
+    _f_path = os.path.abspath(".") + os.sep + "config.json"
     Config_do().read_config(_f_path)
 else:
     Config_do().read_config(args.config)

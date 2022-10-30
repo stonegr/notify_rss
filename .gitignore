@@ -8,3 +8,5 @@ static/db/rss.db
 __pycache__
 static
 config_example.json
+notify_rss.exe
+cs
