@@ -2,7 +2,9 @@
 config.json
 req.py
 1.txt
+static/db/rss.db
 
 # dir
 __pycache__
 static
+config_example.json
