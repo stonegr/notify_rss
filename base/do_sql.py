@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 from base.base import *
 
-engine = create_engine("sqlite:///" + resource_path("static/db/rss.db"), echo=False)
+engine = create_engine("sqlite:////" + resource_path("static/db/rss.db"), echo=False)
 Session = sessionmaker(bind=engine)
 
 session = Session()
