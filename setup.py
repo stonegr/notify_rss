@@ -71,6 +71,9 @@ if (not Config_do.get_self(Config_do.config, ["config", "log_file"])) and (
 ):
     os.makedirs("static/log")
 
+# if not os.path.exists("static/secreat"):
+#     os.makedirs("static/secreat")
+
 if args.test:
     # print(args.test)
     # print(args.t_item)

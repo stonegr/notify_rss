@@ -24,14 +24,30 @@ Config_do.get_self(Config_do.config, ["tz", "wechat", "wecom_secret"])
 # )
 path = "static/secreat"
 
-# 检测获取token
+# 检测获取token，从文件
+# def _get_token(f):
+#     @wraps(f)
+#     def func(*args, **kws):
+#         if os.path.exists(path + os.sep + "access_token.txt"):
+#             with open(path + os.sep + "access_token.txt", "r", encoding="utf-8") as ft:
+#                 t = ft.read().strip()
+#             ft.close()
+#         else:
+#             t = Wechat._wx_token()
+#         status = f(t, *args, **kws)
+#         if status.get("errcode") != 0:
+#             t = Wechat._wx_token()
+#             status = f(t, *args, **kws)
+
+#     return func
+
+
+# 检测获取token，从内存
 def _get_token(f):
     @wraps(f)
     def func(*args, **kws):
-        if os.path.exists(path + os.sep + "access_token.txt"):
-            with open(path + os.sep + "access_token.txt", "r", encoding="utf-8") as ft:
-                t = ft.read().strip()
-            ft.close()
+        if "access_token" in locals().keys():
+            t = globals()["access_token"]
         else:
             t = Wechat._wx_token()
         status = f(t, *args, **kws)
@@ -116,7 +132,13 @@ class Wechat(Notifymataclass):
         get_token_url = f"https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid={cls.wecom_cid}&corpsecret={cls.wecom_secret}"
         response = requests.get(get_token_url).content
         access_token = json.loads(response).get("access_token")
-        with open(path + os.sep + "access_token.txt", "w", encoding="utf-8") as f:
-            f.write(access_token + "\n")
-        f.close()
+
+        # 储存到文件
+        # with open(path + os.sep + "access_token.txt", "w", encoding="utf-8") as f:
+        #     f.write(access_token + "\n")
+        # f.close()
+
+        # 储存到内存
+        globals()["access_token"] = access_token
+
         return access_token
