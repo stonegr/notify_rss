@@ -6,3 +6,4 @@ python_telegram_bot==13.13
 requests==2.26.0
 SQLAlchemy==1.4.36
 telegram==0.0.1
+lxml
