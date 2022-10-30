@@ -2,12 +2,11 @@
 config.json
 req.py
 1.txt
-static/db/rss.db
+static/output.txt
 output.log
 
 # dir
 __pycache__
-static
 config_example.json
 notify_rss.exe
 cs
