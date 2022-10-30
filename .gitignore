@@ -2,8 +2,8 @@
 config.json
 req.py
 1.txt
-static/output.txt
 output.log
+rss0.db
 
 # dir
 __pycache__
