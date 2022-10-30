@@ -8,7 +8,8 @@ a = Analysis(
     ['setup.py'],
     pathex=[],
     binaries=[
-        ('static/db/rss.db','static/db/rss.db')
+        # 第二个是指文件夹,第一个也可以指定文件夹,有关键字限定
+        ('static/database/rss.db','static/database')
     ],
     datas=[],
     hiddenimports=[],
