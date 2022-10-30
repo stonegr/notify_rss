@@ -1,5 +1,6 @@
 from functools import wraps
 import time
+import sys, os
 
 # 显示运行时间的装饰器
 def print_dur_time(f):
@@ -18,3 +19,10 @@ def list_dict_keys(d):
         return d
     elif isinstance(d, dict):
         return list(d.keys())
+
+
+# 判断打包后的文件位置
+def resource_path(relative_path=""):
+    """Get absolute path to resource, works for dev and for PyInstaller"""
+    base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)

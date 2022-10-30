@@ -73,7 +73,7 @@ jobs:
       
       - name: Build
         run: |
-          pyinstaller -F setup.py -n ${{ env.Name }}
+          pyinstaller setup.spec -n ${{ env.Name }}
 
       - name: Package
         working-directory: ./dist
