@@ -66,7 +66,9 @@ if (not Config_do.get_self(Config_do.config, ["config", "db_file"])) and getattr
     if not os.path.exists(_curr):
         shutil.copytree(_ori, _curr)
 
-if not os.path.exists("static/log"):
+if (not Config_do.get_self(Config_do.config, ["config", "log_file"])) and (
+    not os.path.exists("static/log")
+):
     os.makedirs("static/log")
 
 if args.test:
