@@ -1,20 +1,6 @@
 import argparse, os, sys
-from common.config_do import Config_do
 from base.base import *
-
-import shutil
-
-if getattr(sys, "_MEIPASS", False):
-    _name = "static"
-
-    _curr = os.path.join(os.path.abspath("."), _name)
-    _ori = getattr(sys, "_MEIPASS") + os.sep + _name
-
-    # print(getattr(sys, "_MEIPASS"), _curr)
-    # print(os.listdir(_ori))
-
-    if not os.path.exists(_curr):
-        shutil.copytree(_ori, _curr)
+from common.config_do import Config_do
 
 
 def start(force=False):
@@ -63,6 +49,25 @@ if "config.json" in os.listdir("."):
     Config_do().read_config(_f_path)
 else:
     Config_do().read_config(args.config)
+
+import shutil
+
+if (not Config_do.get_self(Config_do.config, ["config", "db_file"])) and getattr(
+    sys, "_MEIPASS", False
+):
+    _name = "static"
+
+    _curr = os.path.join(os.path.abspath("."), _name)
+    _ori = getattr(sys, "_MEIPASS") + os.sep + _name
+
+    # print(getattr(sys, "_MEIPASS"), _curr)
+    # print(os.listdir(_ori))
+
+    if not os.path.exists(_curr):
+        shutil.copytree(_ori, _curr)
+
+if not os.path.exists("static/log"):
+    os.makedirs("static/log")
 
 if args.test:
     # print(args.test)
