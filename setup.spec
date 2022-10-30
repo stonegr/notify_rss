@@ -10,9 +10,7 @@ a = Analysis(
     binaries=[
         ('static/db/rss.db','static/db/rss.db')
     ],
-    datas=[
-        ('static/log/output.log','static/log/output.log')
-    ],
+    datas=[],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

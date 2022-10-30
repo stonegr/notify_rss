@@ -29,8 +29,8 @@ logger.addHandler(stream_handler)
 
 # FileHandler,大小限制,日志记录流
 fsize_handler = RotatingFileHandler(
-    # Config_do.get_self(Config_do.config, ["config", "log_file"], "output.log"),
-    _path + os.sep + "static" + os.sep + "log" + os.sep + "output.log",
+    Config_do.get_self(Config_do.config, ["config", "log_file"], "output.log"),
+    # _path + os.sep + "static" + os.sep + "log" + os.sep + "output.log",
     mode="w",  # 默认为a了
     maxBytes=1024 * 1024 * 10,
     encoding="utf-8",
