@@ -43,7 +43,10 @@ class Aps_do:
         for i, d in tasks.items():
             sche.add_job(
                 func,
-                CronTrigger.from_crontab(i),
+                CronTrigger.from_crontab(
+                    i,
+                    timezone="Asia/Shanghai",
+                ),
                 name=i,
                 args=(d, i, *args),
                 kws=kws,
