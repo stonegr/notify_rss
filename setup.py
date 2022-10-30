@@ -1,4 +1,4 @@
-import argpase, os, sys
+import argparse, os, sys
 from base.base import *
 from common.config_do import Config_do
 
