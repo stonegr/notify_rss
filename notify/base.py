@@ -6,7 +6,11 @@ class Notifymataclass(abc.ABC):
     def fs(self, contents: dict, user: str, title: str):
         if contents:  # 为空的判断
             content_ = self.content_format(contents, title)
-            self.fs_tz(content_, user)
+            if isinstance(content_, list):
+                for i in content_:
+                    self.fs_tz(i, user)
+            else:
+                self.fs_tz(content_, user)
 
     @abc.abstractmethod
     def fs_tz(self, content, user):
@@ -23,7 +27,7 @@ class Notifymataclass(abc.ABC):
         pass
 
     # 这个用来判断获取到的文本是否是一个链接
-    def is_link(self, s: str):
+    def is_link(self, s: str) -> bool:
         _link_like = (
             "http",
             "magnet",
