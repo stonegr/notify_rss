@@ -74,7 +74,7 @@ class Telegram(Notifymataclass):
                             + self._str_formart(data_)
                             + "\n\n"
                         )
-            content_tmp += "\-" * 62 + "\n"
+            # content_tmp += "\-" * 62 + "\n"
             # content_tmp += "\-" * 3 + "\n"
             content += content_tmp
         return content

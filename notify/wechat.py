@@ -110,7 +110,7 @@ class Wechat(Notifymataclass):
                         )
                     else:
                         content_tmp += " " * 8 + f"{name_}: " + data_ + "\n\n"
-            content_tmp += "-" * 38 + "\n"
+            # content_tmp += "-" * 38 + "\n"
             # content_tmp += "-" * 3 + "\n"
             content += content_tmp
         return content
